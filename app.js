@@ -13,4 +13,11 @@ function addDiv(){
     gridContainer.appendChild(newDiv);
 }
 
-addDiv();
+function addDivs(amount){
+
+    for(let i=0;i<amount;i++){
+        addDiv(i);
+    }
+}
+
+addDivs(10);
