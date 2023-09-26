@@ -75,7 +75,7 @@ function changeResolution(){
 }
 
 function removeGrid(){
-    // Remove all previous game results from the page.
+    // Remove existing grid
     let gridItems = document.getElementsByClassName("grid");
         for(let i = gridItems.length - 1; 0 <= i; i--)
             if(gridItems[i] && gridItems[i].parentElement){
