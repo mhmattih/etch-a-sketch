@@ -56,8 +56,31 @@ function mouseOver(event) {
 function mouseOut(event) {
     event.target.classList.remove('highlightGrid');
     event.target.setAttribute('class','grid'); 
-
 }
+
+function changeResolution(){
+
+    let squaresPerSide = prompt("Please enter the number of squares per side for the new grid", "10");
+
+    if (squaresPerSide > 0 && squaresPerSide <= 100) {
+        removeGrid();
+        addDivs(squaresPerSide);
+    }else{
+        alert("Wrong input! Try again!");
+    }
+}
+
+function removeGrid(){
+    // Remove all previous game results from the page.
+    let gridItems = document.getElementsByClassName("grid");
+        for(let i = gridItems.length - 1; 0 <= i; i--)
+            if(gridItems[i] && gridItems[i].parentElement){
+                gridItems[i].parentElement.removeChild(gridItems[i]);
+            }
+}
+
+const changeButton = document.querySelector('#changeBtn');
+changeButton.addEventListener('click', changeResolution); 
 
 
 
