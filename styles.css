@@ -1,12 +1,12 @@
 #gridContainer{
     display: flex;
     flex-direction: row;
-    width: 100px;
+    width: 960px;
     flex-wrap: wrap;
 }
 
 .grid{
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border: 1px solid black;
 }
