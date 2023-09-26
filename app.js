@@ -36,17 +36,21 @@ function addSquares(gridPerSide){
     for(let i=0;i<gridPerSide*gridPerSide;i++){
         addSquare(gridPerSide);
     }
+    addGridEventListeners();
 }
 
 addSquares(16);
 
-let allGrids = document.querySelectorAll(".grid"); // Collect all grids
+function addGridEventListeners(){
 
-// Set mouseover and mouseout eventlisteners to all grids.
-for(i=0; i<allGrids.length; i++)
-{ 
-  allGrids[i].addEventListener("mouseover",mouseOver);
-  allGrids[i].addEventListener("mouseout",mouseOut);
+    let allGrids = document.querySelectorAll(".grid"); // Collect all grids
+
+    // Set mouseover and mouseout eventlisteners to all grids.
+    for(i=0; i<allGrids.length; i++)
+    { 
+    allGrids[i].addEventListener("mouseover",mouseOver);
+    allGrids[i].addEventListener("mouseout",mouseOut);
+    }
 }
 
 function mouseOver(event) {
