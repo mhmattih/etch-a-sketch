@@ -1,4 +1,4 @@
-function addDiv(gridPerSide){
+function addSquare(gridPerSide){
 
     // Total space limit = 960px x 960px
     // 10 X 10 => a grid size = 96px X 96px
@@ -31,14 +31,14 @@ function addDiv(gridPerSide){
 
 }
 
-function addDivs(gridPerSide){
+function addSquares(gridPerSide){
 
     for(let i=0;i<gridPerSide*gridPerSide;i++){
-        addDiv(gridPerSide);
+        addSquare(gridPerSide);
     }
 }
 
-addDivs(16);
+addSquares(16);
 
 let allGrids = document.querySelectorAll(".grid"); // Collect all grids
 
@@ -64,7 +64,7 @@ function changeResolution(){
 
     if (squaresPerSide > 0 && squaresPerSide <= 100) {
         removeGrid();
-        addDivs(squaresPerSide);
+        addSquares(squaresPerSide);
     }else{
         alert("Wrong input! Try again!");
     }
