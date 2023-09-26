@@ -2,8 +2,10 @@ function addDiv(){
     // create a new div element
     const newDiv = document.createElement("div");
 
+    newDiv.setAttribute('class','grid');
+
     // and give it some content
-    const newContent = document.createTextNode("DIV");
+    const newContent = document.createTextNode("");
 
     // add the text node to the newly created div
     newDiv.appendChild(newContent);
@@ -20,4 +22,4 @@ function addDivs(amount){
     }
 }
 
-addDivs(10);
+addDivs(100);
