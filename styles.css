@@ -1,12 +1,28 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
 #gridContainer{
     display: flex;
     flex-direction: row;
     width: 960px;
     flex-wrap: wrap;
+    border: 1px solid black;
 }
 
 .grid{
-    width: 10px;
-    height: 10px;
-    border: 1px solid black;
+    width: 8px;
+    height: 8px;
+   /* border: 1px solid black;*/
+}
+
+/*Simplest way to make hovering 
+.grid:hover{
+    background-color: black;
+}*/
+
+
+.highlightGrid{
+    background-color: black;
 }

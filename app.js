@@ -29,12 +29,6 @@ function addDiv(gridPerSide){
     const gridContainer = document.getElementById("gridContainer");
     gridContainer.appendChild(newDiv);
 
- /* let elements = document.querySelectorAll('.grid');
-    for(var i=0; i<elements.length; i++){
-        elements[i].style.width = 18 + "px";
-        elements[i].style.height = 18 + "px";
-    }
-*/
 }
 
 function addDivs(gridPerSide){
@@ -46,6 +40,22 @@ function addDivs(gridPerSide){
 
 addDivs(16);
 
+let allGrids = document.querySelectorAll(".grid"); // Collect all grids
+
+// Set mouseover and mouseout eventlisteners to all grids.
+for(i=0; i<allGrids.length; i++)
+{ 
+  allGrids[i].addEventListener("mouseover",mouseOver);
+  allGrids[i].addEventListener("mouseout",mouseOut);
+}
+
+function mouseOver(event) {
+    event.target.setAttribute('class','highlightGrid');
+}
+
+function mouseOut(event) {
+    event.target.classList.remove('highlightGrid');
+}
 
 
 
