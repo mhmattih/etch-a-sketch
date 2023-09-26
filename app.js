@@ -55,6 +55,8 @@ function mouseOver(event) {
 
 function mouseOut(event) {
     event.target.classList.remove('highlightGrid');
+    event.target.setAttribute('class','grid'); 
+
 }
 
 

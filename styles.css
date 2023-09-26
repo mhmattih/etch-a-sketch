@@ -1,6 +1,19 @@
 body{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#headerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
 }
 
 #gridContainer{
@@ -8,13 +21,14 @@ body{
     flex-direction: row;
     width: 960px;
     flex-wrap: wrap;
-    border: 1px solid black;
+    border: 1px solid black; 
 }
 
 .grid{
     width: 8px;
     height: 8px;
-   /* border: 1px solid black;*/
+    border: 1px solid black; 
+   /* border: 1px solid white; */
 }
 
 /*Simplest way to make hovering 
@@ -25,4 +39,5 @@ body{
 
 .highlightGrid{
     background-color: black;
+    border: 1px solid black;
 }
