@@ -39,8 +39,6 @@ function addSquares(gridPerSide){
     addGridEventListeners();
 }
 
-addSquares(16);
-
 function addGridEventListeners(){
 
     let allGrids = document.querySelectorAll(".grid"); // Collect all grids
@@ -54,7 +52,8 @@ function addGridEventListeners(){
 }
 
 function mouseOver(event) {
-    event.target.setAttribute('class','highlightGrid');
+    event.target.classList.add('highlightGrid');
+
 }
 
 function mouseOut(event) {
@@ -86,5 +85,5 @@ function removeGrid(){
 const changeButton = document.querySelector('#changeBtn');
 changeButton.addEventListener('click', changeResolution); 
 
-
+addSquares(16);
 
