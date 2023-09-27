@@ -1,21 +1,21 @@
-function addSquare(pixelPerSide){
+function addSquare(squaresPerSide){
 
     // Total space limit = 960px x 960px
-    // 10 X 10 => a grid size = 96px X 96px
-    // 16 X 16 => a grid size = 60px X 60px
-    // Need to change grid size accordingly
+    // 10 X 10 => a square size = 96px X 96px
+    // 16 X 16 => a square size = 60px X 60px
+    // Need to change square size accordingly
 
     // calculate div's width and height so that they will fit to 960px container
     const bordersInPixels = 2;
-    let newSideLength = 960/pixelPerSide - bordersInPixels;
+    let newSideLength = 960/squaresPerSide - bordersInPixels;
 
     // create a new div element
     const newDiv = document.createElement("div");
 
-    // set grid class to a grid
-    newDiv.setAttribute('class','grid');
+    // set square class to a square
+    newDiv.setAttribute('class','square');
 
-    // set width and height to a grid
+    // set width and height to a square
     newDiv.style.width = newSideLength+ "px";
     newDiv.style.height = newSideLength + "px";
 
@@ -31,33 +31,33 @@ function addSquare(pixelPerSide){
 
 }
 
-function addSquares(pixelPerSide){
+function addSquares(squaresPerSide){
 
-    for(let i=0;i<pixelPerSide*pixelPerSide;i++){
-        addSquare(pixelPerSide);
+    for(let i=0;i<squaresPerSide*squaresPerSide;i++){
+        addSquare(squaresPerSide);
     }
-    addGridEventListeners();
+    addSquareEventListeners();
 }
 
-function addGridEventListeners(){
+function addSquareEventListeners(){
 
-    let allGrids = document.querySelectorAll(".grid"); // Collect all grids
+    let allSquares = document.querySelectorAll(".square"); // Collect all squares
 
-    // Set mouseover and mouseout eventlisteners to all grids.
-    for(i=0; i<allGrids.length; i++)
+    // Set mouseover and mouseout eventlisteners to all squares.
+    for(i=0; i<allSquares.length; i++)
     { 
-    allGrids[i].addEventListener("mouseover",mouseOver);
-    allGrids[i].addEventListener("mouseout",mouseOut);
+        allSquares[i].addEventListener("mouseover",mouseOver);
+        allSquares[i].addEventListener("mouseout",mouseOut);
     }
 }
 
 function mouseOver(event) {
-    event.target.classList.add('highlightGrid');
+    event.target.classList.add('highlightSquare');
 
 }
 
 function mouseOut(event) {
-    //event.target.classList.remove('highlightGrid');
+    //event.target.classList.remove('highlightSquare');
 }
 
 function changeResolution(){
@@ -74,10 +74,10 @@ function changeResolution(){
 
 function removeGrid(){
     // Remove existing grid
-    let gridItems = document.getElementsByClassName("grid");
-        for(let i = gridItems.length - 1; 0 <= i; i--)
-            if(gridItems[i] && gridItems[i].parentElement){
-                gridItems[i].parentElement.removeChild(gridItems[i]);
+    let squareItems = document.getElementsByClassName("square");
+        for(let i = squareItems.length - 1; 0 <= i; i--)
+            if(squareItems[i] && squareItems[i].parentElement){
+                squareItems[i].parentElement.removeChild(squareItems[i]);
             }
 }
 

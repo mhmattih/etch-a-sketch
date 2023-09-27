@@ -24,7 +24,7 @@ body{
     border: 1px solid black; 
 }
 
-.grid{
+.square{
     width: 8px;
     height: 8px;
     border: 1px solid black; 
@@ -32,12 +32,12 @@ body{
 }
 
 /*Simplest way to make hovering 
-.grid:hover{
+.square:hover{
     background-color: black;
 }*/
 
 
-.highlightGrid{
+.highlightSquare{
     background-color: black;
     border: 1px solid black;
 }
