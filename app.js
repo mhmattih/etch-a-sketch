@@ -105,11 +105,25 @@ function clearGridView(){
     addSquares(currentSquaresPerSide);
 }
 
+function setFunnyMode(){
+    console.log("Funny mode change");
+}
+
+function setDarkeningMode(){
+    console.log("Darkening mode change");
+}
+
 const changeButton = document.querySelector('#changeBtn');
 changeButton.addEventListener('click', changeResolution); 
 
 const clearButton = document.querySelector('#clearBtn');
 clearButton.addEventListener('click', clearGridView); 
+
+const funnySwitch = document.querySelector('#funnySwitchInput');
+funnySwitch.addEventListener('change', setFunnyMode);
+
+const darkSwitch = document.querySelector('#darkSwitchInput');
+darkSwitch.addEventListener('change', setDarkeningMode);
 
 addSquares(currentSquaresPerSide); // Let's start with 16X16 square grid
 
