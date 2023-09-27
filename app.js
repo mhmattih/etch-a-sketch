@@ -62,7 +62,7 @@ function mouseOut(event) {
 
 function changeResolution(){
 
-    let squaresPerSide = prompt("Please enter the number of squares per side for the new grid", "10");
+    let squaresPerSide = prompt("Please enter the number of squares per side for the new grid (Between 1-100).", "10");
 
     if (squaresPerSide > 0 && squaresPerSide <= 100) {
         removeGrid();
@@ -84,5 +84,5 @@ function removeGrid(){
 const changeButton = document.querySelector('#changeBtn');
 changeButton.addEventListener('click', changeResolution); 
 
-addSquares(16);
+addSquares(16); // Let's start with 16X16 square grid
 

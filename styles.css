@@ -28,6 +28,7 @@ body{
     width: 8px;
     height: 8px;
     border: 1px solid black; 
+    transition: all .4s;
    /* border: 1px solid white; */
 }
 
