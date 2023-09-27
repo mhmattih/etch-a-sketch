@@ -1,4 +1,4 @@
-function addSquare(gridPerSide){
+function addSquare(pixelPerSide){
 
     // Total space limit = 960px x 960px
     // 10 X 10 => a grid size = 96px X 96px
@@ -7,7 +7,7 @@ function addSquare(gridPerSide){
 
     // calculate div's width and height so that they will fit to 960px container
     const bordersInPixels = 2;
-    let newSideLength = 960/gridPerSide - bordersInPixels;
+    let newSideLength = 960/pixelPerSide - bordersInPixels;
 
     // create a new div element
     const newDiv = document.createElement("div");
@@ -31,10 +31,10 @@ function addSquare(gridPerSide){
 
 }
 
-function addSquares(gridPerSide){
+function addSquares(pixelPerSide){
 
-    for(let i=0;i<gridPerSide*gridPerSide;i++){
-        addSquare(gridPerSide);
+    for(let i=0;i<pixelPerSide*pixelPerSide;i++){
+        addSquare(pixelPerSide);
     }
     addGridEventListeners();
 }
