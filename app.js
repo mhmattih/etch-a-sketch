@@ -43,14 +43,14 @@ function addSquareEventListeners(){
 
     let allSquares = document.querySelectorAll(".square"); // Collect all squares
 
-    // Set mouseover and mouseout eventlisteners to all squares.
+    // Set mouseover, mouseout, click and mousedown eventlisteners to all squares.
     for(i=0; i<allSquares.length; i++)
     { 
         allSquares[i].addEventListener("mouseover",mouseOver);
         allSquares[i].addEventListener("mouseout",mouseOut);
         allSquares[i].addEventListener("click",mouseClicked);
         allSquares[i].addEventListener("mousedown",mouseDown);
-     
+        allSquares[i].addEventListener("dblclick",mouseDblClicked);
     }
 }
 
@@ -60,6 +60,10 @@ function mouseDown(event){
 
 function mouseClicked(event){
     event.target.classList.add('highlightSquare');  
+}
+
+function mouseDblClicked(event){
+    event.target.classList.remove('highlightSquare');
 }
 
 function mouseOver(event) {
