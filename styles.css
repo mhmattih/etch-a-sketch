@@ -8,6 +8,18 @@ body{
 
 button{
     font-family:Sans-serif, serif;
+    height: 34px;
+    border-radius: 5px;
+}
+
+.funnySwitch{
+    display: flex;
+    align-items: center;
+}
+
+.darkSwitch{
+    display: flex;
+    align-items: center;
 }
 
 /* The switch - the box around the slider 
@@ -18,6 +30,7 @@ button{
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-left: 5px;
 }
 
 /* Hide default HTML checkbox */
