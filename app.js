@@ -48,12 +48,23 @@ function addSquareEventListeners(){
     { 
         allSquares[i].addEventListener("mouseover",mouseOver);
         allSquares[i].addEventListener("mouseout",mouseOut);
+        allSquares[i].addEventListener("click",mouseClicked);
+        allSquares[i].addEventListener("mousedown",mouseDown);
+     
     }
 }
 
-function mouseOver(event) {
-    event.target.classList.add('highlightSquare');
+function mouseDown(event){
+    event.target.classList.add('highlightSquare');  
+}
 
+function mouseClicked(event){
+    event.target.classList.add('highlightSquare');  
+}
+
+function mouseOver(event) {
+    if (event.buttons === 1)
+        event.target.classList.add('highlightSquare');  
 }
 
 function mouseOut(event) {
