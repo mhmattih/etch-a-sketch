@@ -10,9 +10,9 @@ button{
     font-family:Sans-serif, serif;
 }
 
-
-
-/* The switch - the box around the slider */
+/* The switch - the box around the slider 
+ credit goes to this website
+ https://www.w3schools.com/howto/howto_css_switch.asp*/
 .switch {
   position: relative;
   display: inline-block;
@@ -74,6 +74,7 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+/* The switch related CSS ends here*/
 
 #mainContainer{
     display: flex;

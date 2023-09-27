@@ -1,3 +1,6 @@
+
+let currentSquaresPerSide = 16; // Default value to start with
+
 function addSquare(squaresPerSide){
 
     // Total space limit = 960px x 960px
@@ -85,6 +88,7 @@ function changeResolution(){
     }else{
         alert("Wrong input! Try again!");
     }
+    currentSquaresPerSide = squaresPerSide;
 }
 
 function removeGrid(){
@@ -96,8 +100,16 @@ function removeGrid(){
             }
 }
 
+function clearGridView(){
+    removeGrid();
+    addSquares(currentSquaresPerSide);
+}
+
 const changeButton = document.querySelector('#changeBtn');
 changeButton.addEventListener('click', changeResolution); 
 
-addSquares(16); // Let's start with 16X16 square grid
+const clearButton = document.querySelector('#clearBtn');
+clearButton.addEventListener('click', clearGridView); 
+
+addSquares(currentSquaresPerSide); // Let's start with 16X16 square grid
 
