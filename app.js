@@ -1,5 +1,6 @@
 
 let currentSquaresPerSide = 16; // Default value to start with
+let eraserMode = false;
 
 function addSquare(squaresPerSide){
 
@@ -58,12 +59,26 @@ function addSquareEventListeners(){
 }
 
 function mouseDown(event){
-    event.preventDefault();  // Prevent default browser action for click event. Without this selecting square did not work, cursor changed to fist.
-    event.target.classList.add('highlightSquare');  
+
+        event.preventDefault();  // Prevent default browser action for click event. Without this selecting square did not work, cursor changed to fist.
+        // This hightlights the first element that is where button is pressed.
+        if (eraserMode == false){
+            event.target.classList.add('highlightSquare');
+        }
+        // This erases the first element that is where button is pressed.
+        if (event.button === 0 && eraserMode == true) {
+            event.target.classList.remove('highlightSquare'); 
+        }
 }
 
 function mouseClicked(event){
-    event.target.classList.add('highlightSquare');  
+    
+    console.log("mouseclicked:",eraserMode);
+
+    if (eraserMode == false)
+        event.target.classList.add('highlightSquare');
+    else
+        event.target.classList.remove('highlightSquare'); 
 }
 
 function mouseDblClicked(event){
@@ -71,8 +86,11 @@ function mouseDblClicked(event){
 }
 
 function mouseOver(event) {
-    if (event.buttons === 1)
-        event.target.classList.add('highlightSquare');  
+
+    if (event.buttons === 1 && eraserMode == false)
+        event.target.classList.add('highlightSquare');
+    else if (event.buttons === 1 && eraserMode == true)
+        event.target.classList.remove('highlightSquare'); 
 }
 
 function mouseOut(event) {
@@ -115,7 +133,12 @@ function setDarkeningMode(){
 }
 
 function setEraserMode(){
-    console.log("Eraser mode change");
+
+    if (eraserMode === false)
+        eraserMode = true;
+    else
+        eraserMode = false;
+
 }
 
 const changeButton = document.querySelector('#changeBtn');
