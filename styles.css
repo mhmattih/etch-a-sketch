@@ -4,22 +4,30 @@ body{
     align-items: center;
     background-color: cadetblue;
     font-family:Sans-serif, serif;
+    font-size: 14px;
 }
 
 button{
     font-family:Sans-serif, serif;
     height: 34px;
     border-radius: 5px;
+
+}
+#gameTitle{
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .funnySwitch{
     display: flex;
     align-items: center;
+ 
 }
 
 .darkSwitch{
     display: flex;
     align-items: center;
+  
 }
 
 /* The switch - the box around the slider 

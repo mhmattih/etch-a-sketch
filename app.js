@@ -58,6 +58,7 @@ function addSquareEventListeners(){
 }
 
 function mouseDown(event){
+    event.preventDefault();  // Prevent default browser action for click event. Without this selecting square did not work, cursor changed to fist.
     event.target.classList.add('highlightSquare');  
 }
 
