@@ -62,11 +62,11 @@ function addSquareEventListeners(){
 function mouseDown(event){
 
         event.preventDefault();  // Prevent default browser action for click event. Without this selecting square did not work, cursor changed to fist.
-        // This hightlights the first element that is where button is pressed.
+        // This hightlights the first element where button is pressed.
         if (eraserMode == false){
             event.target.classList.add('highlightSquare');
         }
-        // This erases the first element that is where button is pressed.
+        // This erases the first element where button is pressed.
         if (event.button === 0 && eraserMode == true) {
             event.target.classList.remove('highlightSquare'); 
         }
@@ -74,8 +74,11 @@ function mouseDown(event){
 
 function mouseClicked(event){
     
-    if (eraserMode == false)
+    if (eraserMode == false){
+  
         event.target.classList.add('highlightSquare');
+        event.target.style.backgroundColor = getRGBColor();
+    }
     else
         event.target.classList.remove('highlightSquare'); 
 }
@@ -130,6 +133,23 @@ function setFunnyMode(){
     else
         funnyMode = false;
 }
+
+function getRedColor() {
+    return randomRed = Math.floor(Math.random() * 256);
+}
+
+function getGreenColor() {
+    return randomGreen = Math.floor(Math.random() * 256);
+}
+
+function getBlueColor() {
+    return randomBlue = Math.floor(Math.random() * 256);
+}
+
+function getRGBColor(){
+    return `rgb(${getRedColor()}, ${getGreenColor()}, ${getBlueColor()})`;
+}
+
 
 function setDarkeningMode(){
     console.log("Darkening mode change");
