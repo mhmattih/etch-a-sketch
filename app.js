@@ -114,6 +114,10 @@ function setDarkeningMode(){
     console.log("Darkening mode change");
 }
 
+function setEraserMode(){
+    console.log("Eraser mode change");
+}
+
 const changeButton = document.querySelector('#changeBtn');
 changeButton.addEventListener('click', changeResolution); 
 
@@ -125,6 +129,9 @@ funnySwitch.addEventListener('change', setFunnyMode);
 
 const darkSwitch = document.querySelector('#darkSwitchInput');
 darkSwitch.addEventListener('change', setDarkeningMode);
+
+const eraseSwitch = document.querySelector('#eraseSwitchInput');
+eraseSwitch.addEventListener('change', setEraserMode);
 
 addSquares(currentSquaresPerSide); // Let's start with 16X16 square grid
 

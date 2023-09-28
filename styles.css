@@ -21,13 +21,17 @@ button{
 .funnySwitch{
     display: flex;
     align-items: center;
- 
 }
 
 .darkSwitch{
     display: flex;
     align-items: center;
-  
+
+
+}
+.eraseSwitch{
+    display: flex;
+    align-items: center;
 }
 
 /* The switch - the box around the slider 
