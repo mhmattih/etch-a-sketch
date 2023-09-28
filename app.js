@@ -1,6 +1,7 @@
 
 let currentSquaresPerSide = 16; // Default value to start with
 let eraserMode = false;
+let funnyMode = false;
 
 function addSquare(squaresPerSide){
 
@@ -73,8 +74,6 @@ function mouseDown(event){
 
 function mouseClicked(event){
     
-    console.log("mouseclicked:",eraserMode);
-
     if (eraserMode == false)
         event.target.classList.add('highlightSquare');
     else
@@ -125,7 +124,11 @@ function clearGridView(){
 }
 
 function setFunnyMode(){
-    console.log("Funny mode change");
+
+    if (funnyMode === false)
+        funnyMode = true;
+    else
+        funnyMode = false;
 }
 
 function setDarkeningMode(){
