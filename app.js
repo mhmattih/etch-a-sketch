@@ -3,6 +3,7 @@ let currentSquaresPerSide = 16; // Default value to start with
 let eraserMode = false;
 let funnyMode = false;
 
+// To add a single square
 function addSquare(squaresPerSide){
 
     // Total space limit = 960px x 960px
@@ -36,6 +37,7 @@ function addSquare(squaresPerSide){
 
 }
 
+// To add squares to a grid and assign eventlisteners.
 function addSquares(squaresPerSide){
 
     for(let i=0;i<squaresPerSide*squaresPerSide;i++){
@@ -48,7 +50,7 @@ function addSquareEventListeners(){
 
     let allSquares = document.querySelectorAll(".square"); // Collect all squares
 
-    // Set mouseover, mouseout, click and mousedown eventlisteners to all squares.
+    // Set mouseover, mouseout, click, mousedown and dblclick eventlisteners to all squares.
     for(i=0; i<allSquares.length; i++)
     { 
         allSquares[i].addEventListener("mouseover",mouseOver);
@@ -59,6 +61,7 @@ function addSquareEventListeners(){
     }
 }
 
+// This triggered when mouse button is clicked but not released
 function mouseDown(event){
 
         event.preventDefault();  // Prevent default browser action for click event. Without this selecting square did not work, cursor changed to fist.
@@ -74,6 +77,7 @@ function mouseDown(event){
         }
 }
 
+// This triggered when mouse button is clicked and released
 function mouseClicked(event){
     
     if (eraserMode == false){
@@ -89,8 +93,10 @@ function mouseDblClicked(event){
     event.target.classList.remove('highlightSquare');
 }
 
+// This triggered when mouse button is over the element
 function mouseOver(event) {
 
+    // event.buttons === 1 means if left button is down.
     if (event.buttons === 1 && eraserMode == false){
         event.target.classList.add('highlightSquare');
         if (funnyMode == true)
@@ -100,6 +106,8 @@ function mouseOver(event) {
         event.target.classList.remove('highlightSquare'); 
 }
 
+// With this function its possible to disable drawing ability.
+// This is disabled
 function mouseOut(event) {
     //event.target.classList.remove('highlightSquare');
 }
