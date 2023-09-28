@@ -65,6 +65,8 @@ function mouseDown(event){
         // This hightlights the first element where button is pressed.
         if (eraserMode == false){
             event.target.classList.add('highlightSquare');
+            if (funnyMode == true)
+            event.target.style.backgroundColor = getRGBColor();
         }
         // This erases the first element where button is pressed.
         if (event.button === 0 && eraserMode == true) {
@@ -75,9 +77,9 @@ function mouseDown(event){
 function mouseClicked(event){
     
     if (eraserMode == false){
-  
         event.target.classList.add('highlightSquare');
-        event.target.style.backgroundColor = getRGBColor();
+        if (funnyMode == true)
+            event.target.style.backgroundColor = getRGBColor();
     }
     else
         event.target.classList.remove('highlightSquare'); 
@@ -89,8 +91,11 @@ function mouseDblClicked(event){
 
 function mouseOver(event) {
 
-    if (event.buttons === 1 && eraserMode == false)
+    if (event.buttons === 1 && eraserMode == false){
         event.target.classList.add('highlightSquare');
+        if (funnyMode == true)
+        event.target.style.backgroundColor = getRGBColor();
+    }
     else if (event.buttons === 1 && eraserMode == true)
         event.target.classList.remove('highlightSquare'); 
 }
